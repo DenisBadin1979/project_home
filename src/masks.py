@@ -24,7 +24,7 @@ def get_masks_account(account: Union[str]) -> Union[str]:
     for i in account:
         account_list.append(i)
 
-    for i_d in range(10):
+    for i_d in range(12):
         del account_list[0]
 
     account_list[0] = "X"
