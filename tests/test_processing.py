@@ -3,7 +3,7 @@ import pytest
 from src.processing import filter_by_state, sort_by_date
 
 
-def test_filter_by_state(my_state: str)-> None:
+def test_filter_by_state(my_state: str) -> None:
     assert (
         filter_by_state(
             [
@@ -30,7 +30,7 @@ def test_filter_by_state(my_state: str)-> None:
         ("cen", []),
     ],
 )
-def test_filter_by_stat1(x: str, y: str)-> None:
+def test_filter_by_stat1(x: str, y: str) -> None:
     assert (
         filter_by_state(
             [
@@ -45,7 +45,7 @@ def test_filter_by_stat1(x: str, y: str)-> None:
     )
 
 
-def test_sort_by_date(sort_date_true: str)-> None:
+def test_sort_by_date(sort_date_true: str) -> None:
     assert (
         sort_by_date(
             [
@@ -58,7 +58,7 @@ def test_sort_by_date(sort_date_true: str)-> None:
         == sort_date_true
     )
 
-    def test_sort_by_date2(sort_date_false: str)-> None:
+    def test_sort_by_date2(sort_date_false: str) -> None:
         assert (
             sort_by_date(
                 [

@@ -3,10 +3,11 @@ import pytest
 from src.masks import det_masks_card_number, get_masks_account
 
 
-def test_det_masks_card_number(my_card: str)-> None:
+def test_det_masks_card_number(my_card: str) -> None:
     assert det_masks_card_number("1234567891234567") == my_card
 
-def test_not_det_masks_card_number(my_card_not: str)-> None:
+
+def test_not_det_masks_card_number(my_card_not: str) -> None:
     assert det_masks_card_number("123456789127") == my_card_not
 
 
@@ -55,10 +56,8 @@ def test_not_det_masks_card_number(my_card_not: str)-> None:
         ("8218216540CCCCCC", "неверно указан номер"),
     ],
 )
-def test_det_masks_card_number1(x: str, y: str)-> None:
+def test_det_masks_card_number1(x: str, y: str) -> None:
     assert det_masks_card_number(x) == y
-
-
 
 
 @pytest.mark.parametrize(
@@ -97,13 +96,13 @@ def test_det_masks_card_number1(x: str, y: str)-> None:
         ("82182165555540CCCCCC", "неверно указан номер"),
     ],
 )
-def test_det_masks_account_number1(x: str, y: str)-> None:
+def test_det_masks_account_number1(x: str, y: str) -> None:
     assert get_masks_account(x) == y
 
 
-def test_get_masks_account(my_account: str)-> None:
+def test_get_masks_account(my_account: str) -> None:
     assert get_masks_account("12345678912345678912") == my_account
 
 
-def test_get_masks_account_not(my_account_not: str)-> None:
+def test_get_masks_account_not(my_account_not: str) -> None:
     assert get_masks_account("12345678912sdsdsds12") == my_account_not
