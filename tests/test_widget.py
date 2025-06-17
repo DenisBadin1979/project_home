@@ -19,21 +19,21 @@ def test_det_mask_account_card(x: str, y: str) -> None:
     assert mask_account_card(x) == y
 
 
-def test_det_mask_account_card1(my_card: str)-> None:
+def test_det_mask_account_card1(my_card: str) -> None:
     assert mask_account_card("МИР1234567891234567") == f"МИР {my_card}"
 
 
-def test_det_mask_account_account(my_account: str)-> None:
+def test_det_mask_account_account(my_account: str) -> None:
     assert mask_account_card("Счет57756830220412508912") == f"Счет {my_account}"
 
 
-def test_get_date(my_date: str)-> None:
+def test_get_date(my_date: str) -> None:
     assert get_date("2024-12-31T02:26:18.671407") == my_date
 
 
-def test_get_dat_not(not_date: str)-> None:
+def test_get_dat_not(not_date: str) -> None:
     assert get_date("2024-12-") == not_date
 
 
-def test_get_dat_not1(not_date: str)-> None:
+def test_get_dat_not1(not_date: str) -> None:
     assert get_date("") == not_date
