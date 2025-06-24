@@ -1,0 +1,2 @@
+foo - <class 'TypeError'> - args: (1, 'a') - kwargs: {}
+foo - <class 'TypeError'> - args: (1, 'a') - kwargs: {}
