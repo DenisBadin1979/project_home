@@ -1,9 +1,6 @@
 from typing import Any, Callable, Optional
 
 
-
-
-
 def log(filename: Optional[str] = None) -> Callable[[Callable[..., Any]], Callable[..., Any]]:
     """Декоратор который автоматически логирует начало и конец выполнения функции, а также ее результаты
     или возникшие ошибки. Декоратор должен принимать необязательный аргумент filename, который определяет,
