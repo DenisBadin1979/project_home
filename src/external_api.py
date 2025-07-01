@@ -1,7 +1,6 @@
 import os
 import requests
 from dotenv import load_dotenv
-
 load_dotenv()
 
 
@@ -13,4 +12,4 @@ def currency_converter(currency: str, amount: str) -> float:
     headers = {"apikey": api_key_d}
     response = requests.get(url, headers=headers, params=payload)
     result_convert = response.json()
-    return result_convert["result"]
+    return float(result_convert["result"])
