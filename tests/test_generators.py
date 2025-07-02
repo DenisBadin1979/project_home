@@ -1,7 +1,4 @@
-import pytest
-
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
-from tests.conftest import transaction
 
 
 def test_filter_by_currency(transaction: list[dict]) -> None:
@@ -35,7 +32,7 @@ def test_transaction_descriptions(transaction: list[dict]) -> None:
     assert (next(generator_description)) == "Перевод организации"
 
 
-def test_card_number_generator()-> None:
+def test_card_number_generator() -> None:
     _generator = card_number_generator(1, 5)
     assert next(_generator) == "0000 0000 0000 0001"
     assert next(_generator) == "0000 0000 0000 0002"
