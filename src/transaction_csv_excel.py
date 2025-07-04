@@ -17,7 +17,12 @@ def reader_transaction_csv(file_path: str) -> list[dict]:
 
 def reader_transaction_excel(file_path: str) -> list[dict]:
     """Принимает на данные с транзакциями в формате excel  и возвращает список словарей"""
-    df = pd.read_excel(file_path)
-    excel_data = df.to_dict()
-    list_excel = [excel_data]
-    return list_excel
+    try:
+        df = pd.read_excel(file_path)
+        excel_data = df.to_dict()
+        list_excel = [excel_data]
+        return list_excel
+    except FileNotFoundError:
+        raise FileNotFoundError(f"По заданному пути {file_path} ничего не найдено")
+    except Exception as e:
+        raise Exception(f"Ошибка {e}")
