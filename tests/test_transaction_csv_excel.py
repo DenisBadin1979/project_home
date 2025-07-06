@@ -1,12 +1,6 @@
 import unittest
 from unittest.mock import patch, mock_open, MagicMock
-import pandas as pd
-import pytest
-
 from src.transaction_csv_excel import reader_transaction_csv, reader_transaction_excel
-from tests.conftest import list_dictionary
-
-
 
 
 # Тестовый класс
@@ -78,5 +72,4 @@ class TestReaderTransactionExcel(unittest.TestCase):
         # Проверяем обработку исключения
         with self.assertRaises(Exception) as context:
             reader_transaction_excel("broken.xlsx")
-
         self.assertIn("Ошибка Test error", str(context.exception))
