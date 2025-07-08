@@ -6,7 +6,7 @@ from src.decorators import log
 def test_log_error_console(capsys) -> None:
 
     @log()
-    def foo(x:int, y:int) -> None:
+    def foo(x: int, y: int) -> None:
         return x + y
 
     with pytest.raises(TypeError):

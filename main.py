@@ -1,8 +1,7 @@
-from src.masks import det_masks_card_number, get_masks_account
-from src.utils import operations_json
+from src.transaction_csv_excel import reader_transaction_excel
+
 
 if __name__ == "__main__":
-    print(operations_json("data/operations.json"))
-    print(det_masks_card_number("1234567891012456"))
 
-    print(get_masks_account("73654108430131574305"))
+    path = r"D:\mypython\Personal_account\data\transactions_excel.xlsx"
+    print(reader_transaction_excel(path))

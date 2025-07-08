@@ -1,5 +1,6 @@
 import json
 import logging
+from typing import Any
 
 
 logger = logging.getLogger(__name__)
@@ -10,7 +11,7 @@ logger.addHandler(file_handler)
 logger.setLevel(logging.DEBUG)
 
 
-def operations_json(file_path: str) -> list[dict]:
+def operations_json(file_path: str) -> list | dict | Any:
     """функция,  принимает на вход путь до JSON-файла и возвращает список словарей с данными о финансовых
     транзакциях."""
     logger.info("Запущена функция открытия файла JSON")
