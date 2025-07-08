@@ -108,3 +108,13 @@ def transaction() -> list[dict]:
             "to": "Счет 14211924144426031657",
         },
     ]
+
+
+@pytest.fixture
+def list_dictionary():
+    return [
+        {
+            "name": {"operation": "transaction", "operation2": "transaction2"},
+            "name2": {"operation3": "transaction3", "operation4": "transaction4"},
+        }
+    ]
