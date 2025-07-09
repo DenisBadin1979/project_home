@@ -30,7 +30,16 @@ def main():
     elif user_input == 3:
         transaction_data = reader_transaction_excel(r"data\transactions_excel.xlsx")
     #
+    print(
+    """
+    Программа: Введите статус, по которому необходимо выполнить фильтрацию.
+Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING
+    """
+    )
+user_input = input("Введите статус:   ").upper()
+    
     while True:
+        print(f"Программа: Статус операции {user_input} недоступен. ")
         print(
             """
         Программа: Введите статус, по которому необходимо выполнить фильтрацию.
