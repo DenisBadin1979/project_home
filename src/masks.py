@@ -2,7 +2,7 @@ import logging
 from typing import Union
 
 logger = logging.getLogger(__name__)
-file_handler = logging.FileHandler("logs/maskslog.log", "w", "utf-8")
+file_handler = logging.FileHandler(r"D:/mypython/Personal_account/logs/maskslog.log", "w", "utf-8")
 file_formatter = logging.Formatter("%(asctime)s %(filename)s %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
@@ -49,3 +49,6 @@ def get_masks_account(account: Union[str]) -> Union[str]:
     else:
         logger.error("неверно задан номер счета")
         return "неверно указан номер"
+
+
+print(det_masks_card_number("1111111111111111"))
